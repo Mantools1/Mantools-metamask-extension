@@ -28,7 +28,7 @@ import {
 } from '../../../ui/pages/swaps/swaps.util';
 import fetchWithCache from '../../../ui/helpers/utils/fetch-with-cache';
 import { MINUTE, SECOND } from '../../../shared/constants/time';
-import { isEqualCaseInsensitive } from '../../../ui/helpers/utils/util';
+import { isEqualCaseInsensitive } from '../../../shared/modules/string-utils';
 import { NETWORK_EVENTS } from './network';
 
 // The MAX_GAS_LIMIT is a number that is higher than the maximum gas costs we have observed on any aggregator
@@ -139,9 +139,7 @@ export default class SwapsController {
     if (
       !refreshRates ||
       typeof refreshRates.quotes !== 'number' ||
-      typeof refreshRates.quotesPrefetching !== 'number' ||
-      typeof refreshRates.stxGetTransactions !== 'number' ||
-      typeof refreshRates.stxBatchStatus !== 'number'
+      typeof refreshRates.quotesPrefetching !== 'number'
     ) {
       throw new Error(
         `MetaMask - invalid response for refreshRates: ${response}`,

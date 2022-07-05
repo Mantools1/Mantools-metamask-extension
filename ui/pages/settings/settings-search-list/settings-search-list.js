@@ -3,67 +3,65 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { highlightSearchedText } from '../../../helpers/utils/settings-search';
 import { I18nContext } from '../../../contexts/i18n';
+import IconCaretRight from '../../../components/ui/icon/icon-caret-right';
 
 export default function SettingsSearchList({ results, onClickSetting }) {
   const t = useContext(I18nContext);
 
-  useEffect(() => {
-    results.forEach((_, i) => {
-      highlightSearchedText(i);
-    });
-  }, [results]);
+  useEffect(highlightSearchedText, [results]);
 
   return (
     <div className="settings-page__header__search__list">
-      {Array(5)
-        .fill(undefined)
-        .map((_, i) => {
-          const { image, tab, section } = results[i] || {};
+      {results.slice(0, 5).map((result) => {
+        const { icon, tabMessage, sectionMessage, route } = result;
+        return (
+          Boolean(icon || tabMessage || sectionMessage) && (
+            <div key={`settings_${route}`}>
+              <div
+                className="settings-page__header__search__list__item"
+                onClick={() => onClickSetting(result)}
+              >
+                <i
+                  className={classnames(
+                    'settings-page__header__search__list__item__icon',
+                    icon,
+                  )}
+                />
 
-          return (
-            Boolean(image || tab || section) && (
-              <div key={`settings_${i}`}>
-                <div
-                  key={`res_${i}`}
-                  className="settings-page__header__search__list__item"
-                  onClick={() => onClickSetting(results[i])}
+                <span
+                  id={`menu-tab_${route}`}
+                  className={classnames(
+                    'settings-page__header__search__list__item__tab',
+                    {
+                      'settings-page__header__search__list__item__tab-multiple-lines':
+                        tabMessage(t) === t('securityAndPrivacy'),
+                    },
+                  )}
                 >
-                  <img
-                    className="settings-page__header__search__list__item__icon"
-                    src={`./images/${image}`}
-                  />
-
-                  <span
-                    id={`menu-tab_${i}`}
-                    className={classnames(
-                      'settings-page__header__search__list__item__tab',
-                      {
-                        'settings-page__header__search__list__item__tab-multiple-lines':
-                          tab === t('securityAndPrivacy'),
-                      },
-                    )}
-                  >
-                    {tab}
-                  </span>
-                  <div className="settings-page__header__search__list__item__caret" />
-                  <span
-                    id={`menu-section_${i}`}
-                    className={classnames(
-                      'settings-page__header__search__list__item__section',
-                      {
-                        'settings-page__header__search__list__item__section-multiple-lines':
-                          tab === t('securityAndPrivacy') ||
-                          tab === t('alerts'),
-                      },
-                    )}
-                  >
-                    {section}
-                  </span>
-                </div>
+                  {tabMessage(t)}
+                </span>
+                <IconCaretRight
+                  size={16}
+                  className="settings-page__header__search__list__item__caret"
+                />
+                <span
+                  id={`menu-section_${route}`}
+                  className={classnames(
+                    'settings-page__header__search__list__item__section',
+                    {
+                      'settings-page__header__search__list__item__section-multiple-lines':
+                        tabMessage(t) === t('securityAndPrivacy') ||
+                        tabMessage(t) === t('alerts'),
+                    },
+                  )}
+                >
+                  {sectionMessage(t)}
+                </span>
               </div>
-            )
-          );
-        })}
+            </div>
+          )
+        );
+      })}
       {results.length === 0 && (
         <div
           className="settings-page__header__search__list__item"

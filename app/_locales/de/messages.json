@@ -143,12 +143,6 @@
   "addSuggestedTokens": {
     "message": "Vorgeschlagene Token hinzufügen"
   },
-  "addToAddressBook": {
-    "message": "Zum Adressbuch hinzufügen"
-  },
-  "addToAddressBookModalPlaceholder": {
-    "message": "z.B. Max M."
-  },
   "addToken": {
     "message": "Token hinzufügen"
   },
@@ -962,9 +956,6 @@
   "ensUnknownError": {
     "message": "ENS Lookup fehlgeschlagen."
   },
-  "enterAnAlias": {
-    "message": "Ein Alias eingeben"
-  },
   "enterMaxSpendLimit": {
     "message": "Max. Ausgabelimit eingeben"
   },
@@ -1285,13 +1276,6 @@
   "importAccountSeedPhrase": {
     "message": "Ein Konto mit einem Seed-Schlüssel importieren"
   },
-  "importExistingWalletDescription": {
-    "message": "Geben Sie die Geheime Wiederherstellungsphrase (alias Seed Phrase) ein, die Sie beim Erstellen Ihrer Wallet erhalten haben. $1",
-    "description": "$1 is the words 'Learn More' from key 'learnMore', separated here so that it can be added as a link"
-  },
-  "importExistingWalletTitle": {
-    "message": "Eine bestehende Wallet mit einer Geheime Wiederherstellungsphrase importieren"
-  },
   "importMyWallet": {
     "message": "Meine Wallet importieren"
   },
@@ -1417,9 +1401,6 @@
   "lastConnected": {
     "message": "Zuletzt verbunden"
   },
-  "layer1Fees": {
-    "message": "Ebene 1 Gebühren"
-  },
   "learmMoreAboutGas": {
     "message": "Wollen Sie 1 $ über Gas?"
   },
@@ -1525,7 +1506,7 @@
     "message": "niedrig"
   },
   "mainnet": {
-    "message": "Athereum Hauptnetz"
+    "message": "Ethereum Hauptnetz"
   },
   "makeAnotherSwap": {
     "message": "Eine neue Wallet erstellen"
@@ -1738,9 +1719,6 @@
     "message": "Konto $1",
     "description": "Default name of next account to be created on create account screen"
   },
-  "newCollectibleAddFailed": {
-    "message": "Sammelobjekt wurde nicht hinzugefügt, weil: $1"
-  },
   "newCollectibleAddedMessage": {
     "message": "Sammelobjekt wurde erfolgreich hinzugefügt!"
   },
@@ -1752,9 +1730,6 @@
   },
   "newNFTsDetected": {
     "message": "Neu! NFT-Erkennung"
-  },
-  "newNFTsDetectedInfo": {
-    "message": "Erlaube der MetaMaske, NFTs automatisch von Opensea zu erkennen und in deiner MetaMask Wallet anzuzeigen."
   },
   "newNetworkAdded": {
     "message": "“$1” wurde erfolgreich hinzugefügt!"
@@ -2346,9 +2321,6 @@
   "seedPhraseIntroTitleCopy": {
     "message": "Bevor Sie loslegen, schauen Sie sich dieses kurze Video an, um mehr über Ihre Geheime Wiederherstellungsphrase zu erfahren und wie Sie Ihre Wallet sicher halten können."
   },
-  "seedPhrasePlaceholder": {
-    "message": "Trennen Sie jedes Wort durch ein einzelnes Leerzeichen."
-  },
   "seedPhraseReq": {
     "message": "Seed-Wörterfolgen bestehen aus 12 Wörtern"
   },
@@ -2456,9 +2428,6 @@
   "showRecommendations": {
     "message": "Empfehlungen anzeigen"
   },
-  "showSeedPhrase": {
-    "message": "Geheime Wiederherstellungsphrase zeigen"
-  },
   "showTestnetNetworks": {
     "message": "Test-Netzwerke anzeigen"
   },
@@ -2482,9 +2451,6 @@
   },
   "signed": {
     "message": "Unterschrieben"
-  },
-  "simulationErrorMessage": {
-    "message": "Diese Transaktion wird voraussichtlich fehlschlagen. Der Versuch, sie auszuführen, wird voraussichtlich teuer aber fehlschlagen und wird nicht empfohlen."
   },
   "simulationErrorMessageV2": {
     "message": "Wir konnten das Gas nicht schätzen. Es könnte einen Fehler im Vertrag geben und diese Transaktion könnte fehlschlagen."
@@ -3153,9 +3119,6 @@
   },
   "tryAgain": {
     "message": "Erneut versuchen"
-  },
-  "tryAnywayOption": {
-    "message": "Ich werde es trotzdem versuchen"
   },
   "turnOnTokenDetection": {
     "message": "Erweiterte Token-Erkennung aktivieren"

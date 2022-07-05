@@ -143,12 +143,6 @@
   "addSuggestedTokens": {
     "message": "Önerilen Tokenleri ekle"
   },
-  "addToAddressBook": {
-    "message": "Adres defterine ekle"
-  },
-  "addToAddressBookModalPlaceholder": {
-    "message": "ör. Hüseyin M."
-  },
   "addToken": {
     "message": "Token ekle"
   },
@@ -952,9 +946,6 @@
   "ensUnknownError": {
     "message": "ENS Arama başarısız oldu."
   },
-  "enterAnAlias": {
-    "message": "Bir diğer ad girin"
-  },
   "enterMaxSpendLimit": {
     "message": "Maks. Harcama Limiti Gir"
   },
@@ -1279,13 +1270,6 @@
   "importAccountSeedPhrase": {
     "message": "Gizli Kurtarma İfadesi ile bir cüzdanı içe aktarın"
   },
-  "importExistingWalletDescription": {
-    "message": "Cüzdanınızı oluşturduğunuzda size verilen Gizli Kurtarma İfadenizi (başka bir deyişle Tohum İfadesi) girin. $1",
-    "description": "$1 is the words 'Learn More' from key 'learnMore', separated here so that it can be added as a link"
-  },
-  "importExistingWalletTitle": {
-    "message": "Gizli Kurtarma İfadesi ile mevcut cüzdanı içe aktarın"
-  },
   "importMyWallet": {
     "message": "Cüzdanımı İçe Aktar"
   },
@@ -1413,9 +1397,6 @@
   },
   "lastConnected": {
     "message": "Son Bağlanma"
-  },
-  "layer1Fees": {
-    "message": "Aşama 1 ücretleri"
   },
   "learmMoreAboutGas": {
     "message": "Gaz hakkında $1 istiyor musunuz?"
@@ -1738,9 +1719,6 @@
     "message": "Hesap $1",
     "description": "Default name of next account to be created on create account screen"
   },
-  "newCollectibleAddFailed": {
-    "message": "Tahsil edilebilir tutar eklenmedi ve sebebi: $1"
-  },
   "newCollectibleAddedMessage": {
     "message": "Tahsil edilebilir tutar başarılı bir şekilde eklendi!"
   },
@@ -1752,9 +1730,6 @@
   },
   "newNFTsDetected": {
     "message": "Yeni! NFT algılama"
-  },
-  "newNFTsDetectedInfo": {
-    "message": "MetaMask'in otomatik olarak Opensea'den NFT'leri algılamasına ve MetaMask cüzdanınızda görüntülemesine izin verin."
   },
   "newNetworkAdded": {
     "message": "\"$1\" başarılı bir şekilde eklendi!"
@@ -2346,12 +2321,6 @@
   "seedPhraseIntroTitleCopy": {
     "message": "Başlamadan önce Gizli Kurtarma İfadeniz ve cüzdanınızı nasıl güvende tutacağınız hakkında bilgi edinmek için bu kısa videoyu izleyin."
   },
-  "seedPhrasePlaceholder": {
-    "message": "Her kelimeyi tek bir boşluk ile ayırın"
-  },
-  "seedPhrasePlaceholderPaste": {
-    "message": "Hafıza panosundan Gizli Kurtarma İfadesini yapıştır"
-  },
   "seedPhraseReq": {
     "message": "Gizli Kurtarma İfadeleri 12, 15, 18, 21 veya 24 kelimeden oluşur"
   },
@@ -2462,9 +2431,6 @@
   "showRecommendations": {
     "message": "Önerileri Göster"
   },
-  "showSeedPhrase": {
-    "message": "Gizli Kurtarma İfadesini Göster"
-  },
   "showTestnetNetworks": {
     "message": "Test ağlarını göster"
   },
@@ -2488,9 +2454,6 @@
   },
   "signed": {
     "message": "İmzalandı"
-  },
-  "simulationErrorMessage": {
-    "message": "Bu işlemin başarısız olması bekleniyor. Gerçekleştirmeye çalışıldığında maliyetli olması ancak başarısız olması bekleniyor ve önerilmiyor."
   },
   "simulationErrorMessageV2": {
     "message": "Gaz tahmini yapamadık. Sözleşmede bir hata olabilir ve bu işlem başarısız olabilir."
@@ -3156,9 +3119,6 @@
   },
   "tryAgain": {
     "message": "Tekrar dene"
-  },
-  "tryAnywayOption": {
-    "message": "Yine de deneyeceğim"
   },
   "turnOnTokenDetection": {
     "message": "Gelişmiş token algılamayı açın"

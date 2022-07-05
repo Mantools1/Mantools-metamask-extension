@@ -143,12 +143,6 @@
   "addSuggestedTokens": {
     "message": "Ajouter les jetons suggérés"
   },
-  "addToAddressBook": {
-    "message": "Ajouter au carnet d’adresses"
-  },
-  "addToAddressBookModalPlaceholder": {
-    "message": "p. ex. John D."
-  },
   "addToken": {
     "message": "Ajouter un jeton"
   },
@@ -952,9 +946,6 @@
   "ensUnknownError": {
     "message": "La recherche d’ENS a échoué."
   },
-  "enterAnAlias": {
-    "message": "Saisissez un pseudonyme"
-  },
   "enterMaxSpendLimit": {
     "message": "Saisissez la limite de dépenses maximale"
   },
@@ -1279,13 +1270,6 @@
   "importAccountSeedPhrase": {
     "message": "Importez un compte avec une phrase mnémotechnique"
   },
-  "importExistingWalletDescription": {
-    "message": "Saisissez la phrase secrète de récupération (aussi appelée « phrase mnémonique » ou « seed ») qui vous a été attribuée lors de la création de votre portefeuille. $1",
-    "description": "$1 is the words 'Learn More' from key 'learnMore', separated here so that it can be added as a link"
-  },
-  "importExistingWalletTitle": {
-    "message": "Importer un portefeuille existant avec la phrase secrète de récupération"
-  },
   "importMyWallet": {
     "message": "Importer mon portefeuille"
   },
@@ -1413,9 +1397,6 @@
   },
   "lastConnected": {
     "message": "Dernière connexion"
-  },
-  "layer1Fees": {
-    "message": "Frais de couche 1 (L1)"
   },
   "learmMoreAboutGas": {
     "message": "Souhaitez-vous $1 sur le carburant ?"
@@ -1738,9 +1719,6 @@
     "message": "Compte $1",
     "description": "Default name of next account to be created on create account screen"
   },
-  "newCollectibleAddFailed": {
-    "message": "Le collectible n’a pas été ajouté, car : $1"
-  },
   "newCollectibleAddedMessage": {
     "message": "Le collectible a été ajouté avec succès !"
   },
@@ -1752,9 +1730,6 @@
   },
   "newNFTsDetected": {
     "message": "Nouveau ! Détection de NFT"
-  },
-  "newNFTsDetectedInfo": {
-    "message": "Cela permet à MetaMask de détecter automatiquement les NFT d’Opensea et de les afficher dans votre portefeuille MetaMask."
   },
   "newNetworkAdded": {
     "message": "« $1 » a été ajouté avec succès !"
@@ -2346,12 +2321,6 @@
   "seedPhraseIntroTitleCopy": {
     "message": "Avant de commencer, regardez cette courte vidéo pour vous informer sur votre phrase secrète de récupération et sur la manière de sécuriser votre portefeuille."
   },
-  "seedPhrasePlaceholder": {
-    "message": "Séparez chaque mot par un espace simple"
-  },
-  "seedPhrasePlaceholderPaste": {
-    "message": "Collez la Phrase secrète de récupération depuis le presse-papiers"
-  },
   "seedPhraseReq": {
     "message": "Les phrases secrètes de récupération sont composées de 12, 15, 18, 21 ou 24 mots"
   },
@@ -2462,9 +2431,6 @@
   "showRecommendations": {
     "message": "Afficher les recommandations"
   },
-  "showSeedPhrase": {
-    "message": "Afficher la phrase secrète de récupération"
-  },
   "showTestnetNetworks": {
     "message": "Afficher les réseaux de test"
   },
@@ -2488,9 +2454,6 @@
   },
   "signed": {
     "message": "Signé"
-  },
-  "simulationErrorMessage": {
-    "message": "Cette transaction devrait échouer. Si vous choisissez de l’exécuter, cela devrait à la fois être coûteux et voué à l’échec. Ce n’est donc pas recommandé."
   },
   "simulationErrorMessageV2": {
     "message": "Nous n’avons pas pu estimer le prix de carburant. Par conséquent, il se peut qu’il y ait une erreur dans le contrat et que cette transaction échoue."
@@ -3156,9 +3119,6 @@
   },
   "tryAgain": {
     "message": "Réessayez"
-  },
-  "tryAnywayOption": {
-    "message": "Je veux quand même essayer"
   },
   "turnOnTokenDetection": {
     "message": "Activer la détection améliorée des jetons"

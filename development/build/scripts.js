@@ -34,6 +34,7 @@ const metamaskrc = require('rc')('metamask', {
   INFURA_PROD_PROJECT_ID: process.env.INFURA_PROD_PROJECT_ID,
   ONBOARDING_V2: process.env.ONBOARDING_V2,
   COLLECTIBLES_V1: process.env.COLLECTIBLES_V1,
+  TOKEN_DETECTION_V2: process.env.TOKEN_DETECTION_V2,
   SEGMENT_HOST: process.env.SEGMENT_HOST,
   SEGMENT_WRITE_KEY: process.env.SEGMENT_WRITE_KEY,
   SEGMENT_BETA_WRITE_KEY: process.env.SEGMENT_BETA_WRITE_KEY,
@@ -45,7 +46,7 @@ const metamaskrc = require('rc')('metamask', {
 });
 
 const { streamFlatMap } = require('../stream-flat-map.js');
-const { version } = require('../../package.json');
+const { BuildType } = require('../lib/build-type');
 
 const {
   createTask,
@@ -56,7 +57,6 @@ const {
 const {
   createRemoveFencedCodeTransform,
 } = require('./transforms/remove-fenced-code');
-const { BuildType } = require('./utils');
 
 /**
  * The build environment. This describes the environment this build was produced in.
@@ -147,6 +147,7 @@ function createScriptTasks({
   livereload,
   shouldLintFenceFiles,
   policyOnly,
+  version,
 }) {
   // internal tasks
   const core = {
@@ -192,6 +193,7 @@ function createScriptTasks({
         policyOnly,
         shouldLintFenceFiles,
         testing,
+        version,
       }),
     );
 
@@ -267,6 +269,7 @@ function createScriptTasks({
       testing,
       policyOnly,
       shouldLintFenceFiles,
+      version,
     });
   }
 
@@ -283,6 +286,7 @@ function createScriptTasks({
       testing,
       policyOnly,
       shouldLintFenceFiles,
+      version,
     });
   }
 
@@ -299,6 +303,7 @@ function createScriptTasks({
       testing,
       policyOnly,
       shouldLintFenceFiles,
+      version,
     });
   }
 
@@ -318,6 +323,7 @@ function createScriptTasks({
         policyOnly,
         shouldLintFenceFiles,
         testing,
+        version,
       }),
       createNormalBundle({
         buildType,
@@ -330,6 +336,7 @@ function createScriptTasks({
         policyOnly,
         shouldLintFenceFiles,
         testing,
+        version,
       }),
     );
   }
@@ -344,6 +351,7 @@ function createFactoredBuild({
   policyOnly,
   shouldLintFenceFiles,
   testing,
+  version,
 }) {
   return async function () {
     // create bundler setup and apply defaults
@@ -355,7 +363,12 @@ function createFactoredBuild({
     const reloadOnChange = Boolean(devMode);
     const minify = Boolean(devMode) === false;
 
-    const envVars = getEnvironmentVariables({ buildType, devMode, testing });
+    const envVars = getEnvironmentVariables({
+      buildType,
+      devMode,
+      testing,
+      version,
+    });
     setupBundlerDefaults(buildConfiguration, {
       buildType,
       devMode,
@@ -524,6 +537,7 @@ function createNormalBundle({
   modulesToExpose,
   shouldLintFenceFiles,
   testing,
+  version,
 }) {
   return async function () {
     // create bundler setup and apply defaults
@@ -535,7 +549,12 @@ function createNormalBundle({
     const reloadOnChange = Boolean(devMode);
     const minify = Boolean(devMode) === false;
 
-    const envVars = getEnvironmentVariables({ buildType, devMode, testing });
+    const envVars = getEnvironmentVariables({
+      buildType,
+      devMode,
+      testing,
+      version,
+    });
     setupBundlerDefaults(buildConfiguration, {
       buildType,
       devMode,
@@ -606,6 +625,7 @@ function setupBundlerDefaults(
   },
 ) {
   const { bundlerOpts } = buildConfiguration;
+  const extensions = ['.js', '.ts', '.tsx'];
 
   Object.assign(bundlerOpts, {
     // Source transforms
@@ -613,10 +633,16 @@ function setupBundlerDefaults(
       // Remove code that should be excluded from builds of the current type
       createRemoveFencedCodeTransform(buildType, shouldLintFenceFiles),
       // Transpile top-level code
-      babelify,
+      [
+        babelify,
+        // Run TypeScript files through Babel
+        { extensions },
+      ],
       // Inline `fs.readFileSync` files
       brfs,
     ],
+    // Look for TypeScript files when walking the dependency tree
+    extensions,
     // Use entryFilepath for moduleIds, easier to determine origin file
     fullPaths: devMode,
     // For sourcemaps
@@ -780,7 +806,7 @@ async function bundleIt(buildConfiguration, { reloadOnChange }) {
   }
 }
 
-function getEnvironmentVariables({ buildType, devMode, testing }) {
+function getEnvironmentVariables({ buildType, devMode, testing, version }) {
   const environment = getEnvironment({ devMode, testing });
   if (environment === ENVIRONMENT.PRODUCTION && !process.env.SENTRY_DSN) {
     throw new Error('Missing SENTRY_DSN environment variable');
@@ -803,6 +829,7 @@ function getEnvironmentVariables({ buildType, devMode, testing }) {
     SWAPS_USE_DEV_APIS: process.env.SWAPS_USE_DEV_APIS === '1',
     ONBOARDING_V2: metamaskrc.ONBOARDING_V2 === '1',
     COLLECTIBLES_V1: metamaskrc.COLLECTIBLES_V1 === '1',
+    TOKEN_DETECTION_V2: metamaskrc.TOKEN_DETECTION_V2 === '1',
   };
 }
 

@@ -2,14 +2,13 @@ const { strict: assert } = require('assert');
 const { convertToHexValue, withFixtures } = require('../helpers');
 
 describe('Phishing Detection', function () {
-  function mockPhishingDetection(mockServer) {
-    mockServer
+  async function mockPhishingDetection(mockServer) {
+    await mockServer
       .forGet(
         'https://cdn.jsdelivr.net/gh/MetaMask/eth-phishing-detect@master/src/config.json',
       )
       .thenCallback(() => {
         return {
-          headers: { 'Access-Control-Allow-Origin': '*' },
           statusCode: 200,
           json: {
             version: 2,
